@@ -18,7 +18,7 @@ pipeline {
 
                 // Checkout the entire repo
 
-                git branch: 'main', url: 'https://github.com/KomalRethi/Day-2025-10-15.git'
+                git branch: 'main', url: 'https://github.com/KomalRethi/Java-Tasks.git'
 
             }
 
@@ -28,9 +28,9 @@ pipeline {
 
             steps {
 
-                // Change directory to MyGitTest before running Maven commands
+                // Change directory to SBwithH2db before running Maven commands
 
-                bat 'cd SBwithH2db && mvn clean compile'
+                bat 'cd Day-15-10-2025/SBwithH2db && mvn clean compile'
 
             }
 
@@ -40,7 +40,7 @@ pipeline {
 
             steps {
 
-                bat 'cd SBwithH2db && mvn test'
+                bat 'cd Day-15-10-2025/SBwithH2db && mvn test'
 
             }
 
@@ -50,7 +50,7 @@ pipeline {
 
             steps {
 
-                bat 'cd SBwithH2db && mvn package'
+                bat 'cd Day-15-10-2025/SBwithH2db && mvn package'
 
             }
 
@@ -61,3 +61,4 @@ pipeline {
 }
 
  
+
