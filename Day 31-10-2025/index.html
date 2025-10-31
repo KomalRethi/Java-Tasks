@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Serverless Submission Form (CRUD)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>.container { margin-top: 50px; }</style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Submission Form (Create)</h2>
+        <div id="statusMessage" class="alert d-none" role="alert"></div>
+        
+        <form id="submissionForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="view.html" class="btn btn-secondary">View Submissions</a>
+        </form>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'YOUR_API_GATEWAY_URL/prod'; 
+        const API_SUBMIT_URL = `${API_BASE_URL}/submit`;
+
+        document.getElementById('submissionForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.classList.add('d-none');
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch(API_SUBMIT_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusDiv.textContent = `Success! Submission ID: ${result.id.substring(0, 8)}...`;
+                    statusDiv.className = 'alert alert-success';
+                    document.getElementById('submissionForm').reset();
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                statusDiv.textContent = `Error: ${error.message}`;
+                statusDiv.className = 'alert alert-danger';
+            } finally {
+                statusDiv.classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+</html>
