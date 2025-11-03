@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.amazonaws.cloudwatch.emf.logger">
+    <Appenders>
+        <Console name="LambdaConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} %p %c{1} - %m%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="LambdaConsole" />
+        </Root>
+        <Logger name="com.fileprocessor" level="debug" />
+        <Logger name="com.amazonaws" level="warn" />
+    </Loggers>
+</Configuration>

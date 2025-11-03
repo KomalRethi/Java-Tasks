@@ -1,0 +1,5 @@
+com\fileprocessor\S3FileReader.class
+com\fileprocessor\DynamoDBWriter.class
+com\fileprocessor\FileProcessor.class
+com\fileprocessor\TextFileProcessor.class
+com\fileprocessor\FileProcessingResult.class
