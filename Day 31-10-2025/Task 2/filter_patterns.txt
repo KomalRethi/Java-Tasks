@@ -1,0 +1,42 @@
+# Filter Pattern for NormalOrderPipe
+{
+  "eventName": ["INSERT"],
+  "dynamodb": {
+    "NewImage": {
+      "status": {
+        "S": ["pending", "shipped"]
+      },
+      "customerEmail": {
+        "S": [
+          {
+            "anything-but": "test.com"
+          }
+        ]
+      }
+    }
+  }
+}
+
+# Filter Pattern for PremiumOrderPipe
+{
+  "eventName": ["MODIFY"],
+  "dynamodb": {
+    "NewImage": {
+      "status": {
+        "S": ["shipped"]
+      },
+      "customerEmail": {
+        "S": [
+          {
+            "anything-but": "*test.com*"
+          }
+        ]
+      }
+    },
+    "OldImage": {
+      "status": {
+        "S": ["pending"]
+      }
+    }
+  }
+}
