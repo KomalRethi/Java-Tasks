@@ -1,0 +1,102 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  padding: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px #00000055;
+  margin-bottom: 20px;
+}
+
+form {
+  background: #ffffffcc;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  padding-right: 60px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 5px #4facfe99;
+  outline: none;
+}
+
+.gender {
+  margin-top: 6px;
+}
+
+.gender label {
+  margin-right: 15px;
+  color: #444;
+}
+
+textarea {
+  resize: none;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background: #4facfe;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 6px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="reset"] {
+  background: #ff5f6d;
+}
+
+input[type="submit"]:hover {
+  background: #00c6ff;
+}
+
+input[type="reset"]:hover {
+  background: #ff3e3e;
+}
+
+.student-img {
+  display: block;
+  margin-left: 120px;
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
