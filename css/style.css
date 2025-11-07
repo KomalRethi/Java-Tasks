@@ -1,0 +1,25 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+.table img {
+  height: 60px;
+  object-fit: cover;
+}
