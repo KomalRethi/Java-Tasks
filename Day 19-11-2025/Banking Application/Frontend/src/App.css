@@ -1,0 +1,55 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+h1, h2 {
+  text-align: center;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #4a90e2;
+  color: white;
+  width: 48%;
+}
+.btn-secondary {
+  background: #ddd;
+  width: 48%;
+}
+.action-btn {
+  width: 100%;
+  background: #4a90e2;
+  color: white;
+  margin-bottom: 10px;
+}
+.message {
+  margin-top: 15px;
+  text-align: center;
+  color: #444;
+}
+.message.error {
+  color: red;
+}
+.message.success {
+  color: green;
+}
